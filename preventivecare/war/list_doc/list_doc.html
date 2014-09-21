@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>better doctor search results</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+  
+<script src="list_doc.js"></script>
+<link rel="stylesheet" type="text/css" href="list_doc.css">
+
+</head>
+<body>
+<h3 style="color: white;">Find Doctors</h3>
+<label for="txtQuery" style="color: white;">Preventive Care</label>
+<input id="txtQuery" type="text" value="Cholesterol screening"/>
+<button onclick="onSearch()">Search</button>
+
+<div id="content-placeholder"></div>
+<script id="docs-template" type="text/x-handlebars-template">
+	{{#data}}
+        <div class="result-row">
+			<div class="first-row">
+				<div class="img-container">
+					<img src="{{profile.image_url}}"></img>
+				</div>
+				<div class="right-container">
+					<div>
+						<a class="doctor-name" href="{{attribution_url}}" target="_new">{{profile.first_name}} {{profile.last_name}}</a>
+					</div>
+					<div>
+						{{profile.title}}
+						<br/>
+						{{specialties.0.name}}
+						<br/>
+						<img src="{{ratings.0.image_url_small}}"/>
+					</div>
+				</div>
+			</div>
+        </div>
+    {{/data}}
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+body {
+    font-family: ProximaNovaReg, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h3 {
+    color: #bb3794;
+}
+a {
+    text-decoration: none; 
+}
+
+a, a:visited {
+    color: rgb(84, 180, 210);
+}
+
+a:hover {
+    color: rgb(51,159,192);
+}
+
+.result-row {
+	background-color: beige;
+	margin: 20px;
+	border-radius: 20px;
+}
+
+.first-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.img-container {
+	margin: 20px;	
+}
+
+.right-container {
+	margin: 20px;
+}
+
+.doctor-name {
+	font-size: 2em;
+}
