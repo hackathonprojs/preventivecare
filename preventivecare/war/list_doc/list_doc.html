@@ -8,12 +8,39 @@
 <script src="list_doc.js"></script>
 <link rel="stylesheet" type="text/css" href="list_doc.css">
 
+<script type="text/javascript">
+function navigate(url){
+    window.location = url;
+}
+</script>
+
+
+<style>
+#video_background {
+position: fixed;
+bottom: 0px;
+right: 0px;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -1000;
+overflow: hidden;
+}
+</style>
+</head>
+
 </head>
 <body>
-<h3 style="color: white;">Find Doctors</h3>
+<video id="video_background" preload="auto" autoplay loop muted="" volume="0">
+<source src="/vid/nebula.webm" type="video/webm">
+<source src="/vid/nebula.mp4" type="video/mp4">
+</video>
+
+<h3 style="color: white; font-size: 2em;">Find Doctors</h3>
 <label for="txtQuery" style="color: white;">Preventive Care</label>
 <input id="txtQuery" type="text" value="Cholesterol screening"/>
-<button onclick="onSearch()">Search</button>
+<button class="regular-button" onclick="onSearch()">Search</button>
 
 <div id="content-placeholder"></div>
 <script id="docs-template" type="text/x-handlebars-template">
@@ -33,8 +60,13 @@
 						{{specialties.0.name}}
 						<br/>
 						<img src="{{ratings.0.image_url_small}}"/>
+						<br/>
+						<p>3 miles away</p>
 					</div>
 				</div>
+			</div>
+			<div class="second-row">
+				<button class="regular-button appoint-button" onclick="navigate('/appointment/appointment.html')">Appoint</button>
 			</div>
         </div>
     {{/data}}
