@@ -3,14 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <title>Share & Rating</title>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script type="text/javascript" src="/lib/raty/jquery.raty.js"></script>
+<link rel="stylesheet" type="text/css"  href="/lib/raty/jquery.raty.css">
+
+<style>
+body {
+	color: white; 
+	font-family: "Ubuntu", Helvetica, Arial, sans-serif!important;
+}
+
+
+#video_background {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1000;
+	overflow: hidden;
+}
+</style>
+
 </head>
 <body>
 
-<div style="margin: auto; width: 500px; ">
+<video id="video_background" preload="auto" autoplay loop muted="" volume="0">
+<source src="/vid/nebula.webm" type="video/webm">
+<source src="/vid/nebula.mp4" type="video/mp4">
+</video>
+
+
+
+
+<div style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 20px; width: 400px; background-color: rgba(0,0,0,0.5); text-align: center; padding: 20px;">
+	<h2>Rate Your Visit</h2>
+	<div id="rateDocInstruction"></div>
+	<script>
+	$('#rateDocInstruction').raty();
+	</script>
+</div>
+
+
+<div style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 20px; width: 400px; background-color: rgba(0,0,0,0.5); text-align: center; padding: 20px;">
 
 	
+	<h2>Challenge Your Friends</h2>
+	<p>(Your Procedure will not be shared)</p>
 
-	<p>Your Procedure will not be shared</p>
+	<div style="width: 130px; margin: auto; text-align: center;">	
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=140168689470510&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		
+		<div class="fb-share-button" data-href="http://socialbtc.appspot.com/share/fbshare.html" data-layout="button"></div>	
+	</div>
 
 </div>
 
