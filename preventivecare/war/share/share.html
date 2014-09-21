@@ -9,6 +9,13 @@
 <script type="text/javascript" src="/lib/raty/jquery.raty.js"></script>
 <link rel="stylesheet" type="text/css"  href="/lib/raty/jquery.raty.css">
 
+<script type="text/javascript">
+function onBtnSubmit() {
+	$("#btnSubmit").hide();
+	$("#submitMsg").show();
+}
+</script>
+
 <style>
 body {
 	color: white; 
@@ -29,6 +36,52 @@ body {
 }
 </style>
 
+<style type="text/css">
+.submit-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #e6cafc;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #e6cafc;
+	box-shadow:inset 0px 1px 0px 0px #e6cafc;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c579ff), color-stop(1, #a341ee) );
+	background:-moz-linear-gradient( center top, #c579ff 5%, #a341ee 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c579ff', endColorstr='#a341ee');
+	background-color:#c579ff;
+	-webkit-border-top-left-radius:37px;
+	-moz-border-radius-topleft:37px;
+	border-top-left-radius:37px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:37px;
+	-moz-border-radius-bottomright:37px;
+	border-bottom-right-radius:37px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #a946f5;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:50px;
+	line-height:50px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #8628ce;
+}
+.submit-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a341ee), color-stop(1, #c579ff) );
+	background:-moz-linear-gradient( center top, #a341ee 5%, #c579ff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a341ee', endColorstr='#c579ff');
+	background-color:#a341ee;
+}.submit-button:active {
+	position:relative;
+	top:1px;
+}</style>
+
 </head>
 <body>
 
@@ -41,11 +94,26 @@ body {
 
 
 <div style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 20px; width: 400px; background-color: rgba(0,0,0,0.5); text-align: center; padding: 20px;">
-	<h2>Rate Your Visit</h2>
-	<div id="rateDocInstruction"></div>
+	<h2>Rate Your Check-up Visit</h2>
+	<label for="rateInstruction">Doctors' Instructions</label>
+	<div id="rateInstruction"></div>
+	<label>Ease of Making Appointment</label>
+	<div id="rateAppointment"></div>
+	<label>Facility and Equipment</label>
+	<div id="rateFacility"></div>
+	<br/>
+	<label>Overall</label>
+	<div id="rateOverall"></div>
 	<script>
-	$('#rateDocInstruction').raty();
+	$('#rateInstruction').raty();
+	$('#rateAppointment').raty();
+	$('#rateFacility').raty();
+	$('#rateOverall').raty();
 	</script>
+	
+	<br/>
+	<button id="btnSubmit" class="submit-button" onclick="onBtnSubmit()">Submit</button>
+	<div id="submitMsg" style="width: 60%; margin: auto; background-color: rgba(233,233,233,0.3); display: none;">Thank you! Your rating is saved and will help others evaluate their option</div>
 </div>
 
 
