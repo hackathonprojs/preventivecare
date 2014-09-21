@@ -95,6 +95,7 @@ body {
 
 <div style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 20px; width: 400px; background-color: rgba(0,0,0,0.5); text-align: center; padding: 20px;">
 	<h2>Rate Your Check-up Visit</h2>
+	<h4>(Rating is Anonymous)</h4>
 	<label for="rateInstruction">Doctors' Instructions</label>
 	<div id="rateInstruction"></div>
 	<label>Ease of Making Appointment</label>
@@ -110,6 +111,11 @@ body {
 	$('#rateFacility').raty();
 	$('#rateOverall').raty();
 	</script>
+	
+	<br/>
+	<div>
+		<textarea cols="30" rows="3" placeholder="Comments"></textarea>
+	</div>
 	
 	<br/>
 	<button id="btnSubmit" class="submit-button" onclick="onBtnSubmit()">Submit</button>
