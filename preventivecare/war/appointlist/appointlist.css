@@ -1,0 +1,18 @@
+body {
+    font-family: ProximaNovaReg, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+h3 {
+    color: #bb3794;
+}
+th {
+    text-align: left;
+}
+table {
+  font-size: 14px;
+}
+td,th {
+  height: 30px;
+  border-bottom: 1px dotted #d6d6d6;
+  vertical-align: top;
+  padding-right: 15px;
+}
